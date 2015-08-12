@@ -16,7 +16,7 @@ The end goal is for users(patrons) to make a better decision on which product to
 
 Inline-style: 
 ![alt text](Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Wireframe") "Wireframe")
+![alt text](https://moqups.com/#!/edit/reyes/WsTebNAP "Wireframe") "Wireframe")
 
 ##Routes 
 ```
