@@ -12,7 +12,11 @@ The end goal is for users(patrons) to make a better decision on which product to
 2. **Users can geolocate their position (dont know how this will work exactly).**
 3. **Users can login with their Facebook account.**
 
-Pseudocode 
+##Wireframe
+
+Inline-style: 
+![alt text](Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Wireframe") "Wireframe")
 
 ##Routes 
 ```
