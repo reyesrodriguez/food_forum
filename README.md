@@ -1,6 +1,6 @@
-# food_forum
+# Food Word to Mouth App
 
-User Stories (2 Points)
+##User Stories (2 Points)
 
 This is a simple app to bring restaurants, coffee shops(products) and patrons together in a forum type application. 
 The end goal is for users(patrons) to make a better decision on which product to choose based on their friends "word to mouth" approach.
