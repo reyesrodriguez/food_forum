@@ -14,9 +14,8 @@ The end goal is for users(patrons) to make a better decision on which product to
 
 ##Wireframe
 
-Inline-style: 
-![alt text](Inline-style: 
-![alt text](https://moqups.com/#!/edit/reyes/WsTebNAP "Wireframe") "Wireframe")
+Wireframe
+![alt text](https://moqups.com/reyes/WsTebNAP/p:aa7317167 "Wireframe")
 
 ##Routes 
 ```
