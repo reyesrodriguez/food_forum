@@ -15,7 +15,7 @@ The end goal is for users(patrons) to make a better decision on which product to
 ##Wireframe
 
 Wireframe
-![alt text](https://moqups.com/reyes/WsTebNAP/p:aa7317167 "Wireframe")
+![alt text](https://github.com/reyesrodriguez/food_forum/blob/master/images_readme/project.png "Wireframe")
 
 ##Routes 
 ```
