@@ -15,35 +15,37 @@ The end goal is for users(patrons) to make a better decision on which product to
 Pseudocode 
 
 ##Routes 
-*app.get('/business', function(req, res){
+```
+app.get('/business', function(req, res){
 	####gets all business info and puts it in a Database
 
-*app.get('/patrons', function(req, res){
+app.get('/patrons', function(req, res){
 	####gets all patrons info and puts it in a Database
 
-*app.get('/business/:id', function(req, res){
+app.get('/business/:id', function(req, res){
 	####shows business info and ideally the user can "word" here??
 
-*app.get('/patrons/:id', function(req, res){
+app.get('/patrons/:id', function(req, res){
 	####shows business info and ideally the user can "word" here??
 
-*app.post('/business', function(req,res){
+app.post('/business', function(req,res){
 	####post new businesses on Database and render them to an ejs file
 
-*app.post('/patrons/', function(req,res){
+app.post('/patrons/', function(req,res){
 	####post new patrons on Database and render them to an ejs file
 
-*add.put('/business/:id', function(req,res){
+add.put('/business/:id', function(req,res){
 	####updates business data to database and render them to an ejs file
 
-*add.put('/patrons/:id', function(req,res){
+add.put('/patrons/:id', function(req,res){
 	####updates patrons data to database and render them to an ejs file
 
 
-*add.delete('/business or patron/:id', function(req,res){
+add.delete('/business or patron/:id', function(req,res){
 	####*dont know how this will work yet!!!?*
 	#####delete businesses or patrons by id 
 
+```
 
 ##Database Design (ERD/Data Model Diagrams) 
 
