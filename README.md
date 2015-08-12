@@ -15,7 +15,7 @@ The end goal is for users(patrons) to make a better decision on which product to
 ##Wireframe
 
 Wireframe
-![alt text](https://github.com/reyesrodriguez/food_forum/blob/master/images_readme/project.png "Wireframe")
+![alt text](https://github.com/reyesrodriguez/food_forum/blob/master/images_readme/wireframe.png)
 
 ##Routes 
 ```
@@ -52,7 +52,7 @@ add.delete('/business or patron/:id', function(req,res){
 
 ##Database Design (ERD/Data Model Diagrams) 
 
-Its on a png file
+![alt text](https://github.com/reyesrodriguez/food_forum/blob/master/images_readme/project.png)
 
 
 
