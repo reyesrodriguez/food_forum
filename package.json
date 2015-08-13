@@ -1,0 +1,26 @@
+{
+  "name": "project_ga2",
+  "version": "1.0.0",
+  "description": "##User Stories (2 Points)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyesrodriguez/food_forum.git"
+  },
+  "author": "reyes rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reyesrodriguez/food_forum/issues"
+  },
+  "homepage": "https://github.com/reyesrodriguez/food_forum#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "sqlite3": "^3.0.10"
+  }
+}

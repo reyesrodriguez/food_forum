@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <title>foodforum</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+
+
+
+  </head>
+  <body>
+  	<div class="container">
+    <nav class="navbar navbar-default">
+  		<div class="container-fluid">
+    	<div class="navbar-header">
+      	<a class="navbar-brand" href="/">Food Forum</a>
+    	</div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="/patron">Join</a></li>
+        <li><a href="/business">Add Your Business</a></li>
+        <li><a href="/list">Talk Shop</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<% rows.forEach(function(rows){%>
+  <h2><a href="/business/comments/<%=rows.id%>"><%=rows.name%></a></h2>
+  <img src="<%=rows.image%>" class="img-circle"  height="140" width="140">
+<%})%>
+
+
+
+	
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
