@@ -33,22 +33,16 @@
     </div>
   </div>
 </nav>
-
-	<img src="<%=rows.image%>" class="img-circle"  height="140" width="140">
-	<h2><a href="<%=rows.website%>"><%=rows.name%></a></h2>
-
+	<% rows.forEach(function(row){%>
+	<h2><%=rows.name%></h2>
+	<%})%>
  
   <br><br>
-  <form action="/patron/:id?_method=PUT" method="POST" class="pure-u-1-3 pure-form pure-form-aligned join">
+  <form action="/patron/<%=rows.id%>?_method=PUT" method="POST" class="pure-u-1-3 pure-form pure-form-aligned join">
     <fieldset>
         <div class="pure-control-group">
             <label for="name">Name</label>
             <input id="name" type="text" name="name" placeholder="enter your name">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="name">Image</label>
-            <input id="name" type="text" name="image" placeholder="enter image url ">
         </div>
 
         <div class="pure-control-group">
@@ -57,7 +51,7 @@
         </div>
 
             <button type="submit" class="pure-button pure-button-primary">Submit</button>
-        </div>
+        
     </fieldset>
 </form>
   
