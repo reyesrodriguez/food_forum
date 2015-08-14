@@ -28,5 +28,5 @@ CREATE TABLE comments (
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (users_id) REFERENCES users_id(users),
-  FOREIGN KEY (comment) REFERENCES id(business) 
+  FOREIGN KEY (business_id) REFERENCES business_id(business) 
 );

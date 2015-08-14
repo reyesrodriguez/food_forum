@@ -147,23 +147,31 @@ app.delete('/business/:id', function (req, res){
 
 
 app.get('/business/comments/:id', function (req,res){
-
-	db.get('SELECT * FROM comments WHERE id=?', parseInt(req.params.id), function(err, rows){
+		db.get('SELECT * FROM business WHERE id=?', parseInt(req.params.id), function(err, business){
 		if (err){
 			throw err;
 		}else{
-			res.render('show_comments.ejs', {rows:rows})
+			db.all('SELECT * FROM comments WHERE business_id= ?', req.params.id, function(err, comments){
+				if(err){
+					throw err;
+				}else{
+					res.render('show_comments.ejs', {business:business, comments:comments})
+				}
+			})
+		
+		
 		}
+
 });
 });
 
 //where comments get written posted....then go back to same page show_comments!!!!
-app.post('/business/comments', function (req,res){
-	db.run('INSERT INTO comments (comment) VALUES (?)', req.body.comment, function(err,rows){
+app.post('/business/comments/:id', function (req,res){
+	db.run('INSERT INTO comments (comment, business_id) VALUES (?,?)', req.body.comment, req.params.id, function(err){
 		if(err){
 			throw err;
 		}else{
-			res.render('show_comments.ejs', {rows:rows})
+		 res.redirect('/business/comments/' + req.params.id)
 		}
 	});
 });

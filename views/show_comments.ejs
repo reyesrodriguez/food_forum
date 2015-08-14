@@ -18,6 +18,9 @@
 
   </head>
   <body>
+    
+
+  <body>
   	<div class="container">
     <nav class="navbar navbar-default">
   		<div class="container-fluid">
@@ -35,20 +38,22 @@
 </nav>
 
 
-	<h2><%=rows.name%></h2>
-  <h2><%=rows.address%></h2>
-  <h2><%=rows.type%></h2>
-  <br><br>
-
-  <p><%=rows.comment%></p>
+	<h2><%=business.name%></h2>
+  <h2><%=business.address%></h2>
+  <h2><%=business.type%></h2>
   
-  <form action="/business/comments" method="POST">
+
+  <%comments.forEach(function(rows){%>
+  <p><%=rows.comment%></p>
+  <%})%>
+  
+  <form action="/business/comments/<%=business.id%>" method="POST">
   <input type="text" class="form-control" name="comment" placeholder="Comment Here"><br>
   <button>Submit</button>
   </form>
 	
 	</div>
-
+    <script src="geoPosition.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

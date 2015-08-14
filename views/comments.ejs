@@ -3,10 +3,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
@@ -29,24 +27,27 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="/patron">Join</a></li>
-        <li><a href="/business">Add Your Business</a></li>
-        <li><a href="/list">Talk Shop</a></li>
+         <li><a href="/business">Add Your Business</a></li>
+         <li><a href="/list">Talk Shop</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<div class="container">
 
-<% users.forEach(function(rows){%>
-  <h2><a href="/business/comments/<%=rows.id%>"><%=rows.name%></a></h2>
-<%})%>
+  <h2><%=rows.name%></h2>
+  <h2><%=rows.address%></h2>
+  <h2><%=rows.type%></h2>
 
+  <%Object(keys).forEach(function(rows){%>
+  <p><%=rows.comment%></p>
+  <%})%>
 
+  <form action="/business/comments" method="POST">
+  <input type="text" class="form-control" name="comment" placeholder="Comment Here"><br>
+  <button>Submit</button>
+  </form>
 
-	
-	</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-
