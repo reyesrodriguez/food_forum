@@ -47,14 +47,15 @@
         document.getElementById("clicks").innerHTML = clicks;
     };
     </script>
+
   
 
   <div class="col-md-6 business">
-    <img src="/img/glyphicons-344-thumbs-up.png" heigth="25" width="25"></h2>
-    <button type="button" onClick="onClick()">like</button>
-    <p>Likes <a id="clicks">0</a></p>
+    <button class="btn btn-primary" type="button" onClick="onClick()">
+    Like <span id="clicks" class="badge">0</span>
+    </button>
   <h2><img src="<%=business.image%>" class="img-rounded" heigth="225" width="225"> </h2>
-	<h2><%=business.name%> 
+	<h2><%=business.name%></h2> 
   <h4><%=business.address%></h4>
   <h4><%=business.type%></h4>
 

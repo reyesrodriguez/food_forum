@@ -1,3 +1,6 @@
+body > .container {
+}
+
 .image {
 	background-image: url("/img/join_image.jpg");
 	height: 600px;
