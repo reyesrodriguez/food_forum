@@ -1,4 +1,8 @@
+.image {
+	background-image: url("/img/join_image.jpg");
+	height: 600px;
 
+}
 
 .centro {
 	margin-left: 20%;
@@ -42,7 +46,27 @@ margin-top: 20px;
 }
 
 .submitbusiness{
-	margin-left: 35%;
+	margin-top: 5%;
+	margin-left: 38%;
+}
+
+.join{
+	font-size: 5em;
+	font-weight: 900;
+	color: yellow;
+
+}
+
+.listusers {
+	width:400px;
+	height:600px;
+	overflow:scroll;
+	text-align: center;
+	margin-left: 30%;
+}
+.form-control{
+	font-weight: 900;
+	font-color: black;
 }
 .delete{
 	text-align: center;

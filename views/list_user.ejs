@@ -38,10 +38,10 @@
 </nav>
 <div class="container">
 
-<div class="submitbusiness">
+<div class="listusers">
 <% rows.forEach(function(rows){%>
-  <img src="<%=rows.image%>" class="img-rounded" heigth="200" width="200">
-  <h2><a href="/patron/<%=rows.id%>"><%=rows.name%></a></h2>
+  <img src="<%=rows.image%>" class="img-rounded" heigth="170" width="170">
+  <h3><a href="/patron/<%=rows.id%>"><%=rows.name%></a></h3>
 <%})%>
 </div>
 
