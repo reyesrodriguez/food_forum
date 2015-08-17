@@ -1,12 +1,40 @@
-.containers {
-	margin-left: 70%;
+.centro {
+	margin-left: 20%;
+	
+}
+.scrollable {
+	width:400px;
+	height:400px;
+	overflow:scroll;
+	padding: 20px;
+
+}
+.comment{
+	position: relative;
+	margin-top: 15px;
+	margin-left: 50%;
 }
 
-html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
+.business{
+	
+}
+
+.geo{
+	border-top: 2px solid red;
+	width:400px;
+	height:100px;
+	position: absolute;
+	margin-top: 30%;
+
+}
+
+.list{
+	padding:25%;
+}
+
+.submitbusiness{
+	padding:50%;
+}
+
+
+

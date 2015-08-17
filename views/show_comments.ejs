@@ -12,8 +12,10 @@
     <title>foodforum</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-
+	<link rel="stylesheet" href="/css/style.css">
+<script src="http://api.mygeoposition.com/api/geopicker/api.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
+        async defer></script>
 
 
   </head>
@@ -28,7 +30,7 @@
       	<a class="navbar-brand" href="/">Food Forum</a>
     	</div>
     <div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
          <li><a href="/business">Add Your Business</a></li>
          <li><a href="/list">Talk Shop</a></li>
@@ -36,21 +38,52 @@
     </div>
   </div>
 </nav>
+  <div class="row">
+  
 
-
+  <div class="col-md-6 business">
+  <h2><img src="<%=business.image%>" class="img-rounded" heigth="225" width="225"></h2>
 	<h2><%=business.name%></h2>
-  <h2><%=business.address%></h2>
-  <h2><%=business.type%></h2>
-  
+  <h4><%=business.address%></h4>
+  <h4><%=business.type%></h4>
+  </div>
 
+  <div class="col-md-6 geo">
+    <h4>Locate this business or other places</h4>
+
+    <script type="text/javascript">
+        function lookupGeoData14() {            
+            myGeoPositionGeoPicker({
+                returnFieldMap                    : {'geoposition14' : '<LAT>,<LNG>'},
+                zoomLevel                            : 16,
+                startPositionInputFieldIds        : ['fieldStreet', 'fieldCity']
+            });
+        }
+    </script>
+    
+    <input type="text" class="form-control" name="fieldStreet" id="fieldStreet" placeholder="Enter Street"><br>
+    <input type="text" class="form-control" name="fieldCity" id="fieldCity" placeholder="Enter City"><br>
+   <button type="button" onclick="lookupGeoData14();">Locate</button>
+
+  </div>
+
+
+
+  <div class="col-md-6 scrollable">
   <%comments.forEach(function(rows){%>
-  <p><%=rows.comment%></p>
+  <p class="lead"><small><bold><%=rows.comment%></bold></small></p>
+  <h4><mark><%=rows.username%></mark></h4>
+  <h5><%=rows.created_at%></h5>
   <%})%>
-  
-  <form action="/business/comments/<%=business.id%>" method="POST">
+  </div>
+
+    <div class="col-md-6 comment">
+    <form action="/business/comments/<%=business.id%>" method="POST">
   <input type="text" class="form-control" name="comment" placeholder="Comment Here"><br>
+  <input type="text" class="form-control" name="username" placeholder="username"><br>
   <button>Submit</button>
   </form>
+  </div>
 	
 	</div>
     <script src="geoPosition.js"></script>

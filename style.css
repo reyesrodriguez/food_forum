@@ -2,6 +2,10 @@
 	width: 70%;
 }
 
-.join {
-	margin: auto;
+.scrollable {
+	width:200;
+	height:200;
+	overflow:scroll;
+	padding:5px;
+
 }

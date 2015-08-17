@@ -16,12 +16,13 @@
     <title>foodforum</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 
 
   </head>
-  <body>
+
+<body>
   	<div class="container">
     <nav class="navbar navbar-default">
   		<div class="container-fluid">
@@ -29,16 +30,16 @@
       	<a class="navbar-brand" href="/">Food Forum</a>
     	</div>
     <div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
         <li><a href="/business">Add Your Business</a></li>
         <li><a href="/list">Talk Shop</a></li>
-         <li><a href="/patron">login</a></li>
       </ul>
     </div>
   </div>
 </nav>
 </div>
+
 
 <div class="container">
 <form action="/patron" method="POST" class="pure-u-1-2 pure-form pure-form-aligned join">
@@ -46,7 +47,7 @@
 
         <div class="pure-control-group">
             <label for="name">Username</label>
-            <input id="name" type="text" name="name" placeholder="enter your username">
+            <input id="name" type="text" name="username" placeholder="enter your username">
         </div>
 
         <div class="pure-control-group">
@@ -58,6 +59,12 @@
             <label for="email">Email Address</label>
             <input id="email" type="email" name="email" placeholder="Email Address">
         </div>
+        
+        <div class="pure-control-group">
+            <label for="name">Image</label>
+            <input id="name" type="text" name="image" placeholder="enter image url">
+        </div>
+        <!-- onClick() to the function in js-->
 
           <button type="submit" class="pure-button pure-button-primary">Submit</button>
         </div>

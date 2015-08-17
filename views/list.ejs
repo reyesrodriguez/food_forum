@@ -14,7 +14,7 @@
     <title>foodforum</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 
 
@@ -27,7 +27,7 @@
       	<a class="navbar-brand" href="/">Food Forum</a>
     	</div>
     <div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
         <li><a href="/business">Add Your Business</a></li>
         <li><a href="/list">Talk Shop</a></li>
@@ -35,16 +35,19 @@
     </div>
   </div>
 </nav>
-<div class="container">
-
+<div class="rows">
+  <div class="col-md-6 list">
 <% rows.forEach(function(rows){%>
+  <h2><img src="<%=rows.image%>" heigth="150" width="150"></h2>
   <h2><a href="/business/comments/<%=rows.id%>"><%=rows.name%></a></h2>
 <%})%>
-
+</div>
 
 
 	
 	</div>
+</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

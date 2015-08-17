@@ -18,9 +18,15 @@
   "homepage": "https://github.com/reyesrodriguez/food_forum#readme",
   "dependencies": {
     "body-parser": "^1.13.3",
+    "cookie-parser": "^1.3.5",
     "ejs": "^2.3.3",
     "express": "^4.13.3",
+    "express-session": "^1.11.3",
     "method-override": "^2.3.5",
-    "sqlite3": "^3.0.10"
+    "morgan": "^1.6.1",
+    "passport": "^0.2.2",
+    "passport-facebook": "^2.0.0",
+    "sqlite3": "^3.0.10",
+    "util": "^0.10.3"
   }
 }

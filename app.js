@@ -42,7 +42,7 @@ app.get('/patron/:id', function(req,res){
 
 //takes info from the index page and redirects to patron/:id
 app.post('/patron', function (req,res){
-	db.run('INSERT INTO users (name, email) VALUES (?,?)', req.body.name, req.body.email, function(err){
+	db.run('INSERT INTO users (username, name, email, image) VALUES (?,?,?,?)',req.body.username, req.body.name, req.body.email, req.body.image, function(err){
 		if (err){
 			throw err;
 		}else{
@@ -53,7 +53,7 @@ app.post('/patron', function (req,res){
 
 app.put('/patron/:id', function (req,res){
 		
-		db.run('UPDATE users SET name=?, email=? WHERE id=?', req.body.name, req.body.email, req.params.id, function(err){
+		db.run('UPDATE users SET username=?, name=?, email=?, image=? WHERE users_id=?', req.body.username, req.body.name, req.body.email, req.body.image, req.params.id, function(err){
 	if(err){
 		throw err
 	}else {
@@ -74,15 +74,15 @@ app.delete('/patron/:id', function (req, res){
 });
 
 ////////////////////////////routes for listing each user //////////////////////////////////
-app.get('/users', function (req,res){
-	db.all('SELECT * FROM users', function(err, user) {
-		if (err){
-			throw err;
-		} else{
-			res.render('list_user.ejs', {user: user})
-		}
-	});
-});
+// app.get('/profile/:id', function (req,res){
+// 	db.all('SELECT * FROM users WHERE id=?', function(err, rows) {
+// 		if (err){
+// 			throw err;
+// 		} else{
+// 			res.render('list_user.ejs', {rows: rows})
+// 		}
+// 	});
+// });
 app.get('/list', function (req,res){
 	db.all('SELECT * FROM business', function(err, rows) {
 		if (err){
@@ -112,7 +112,7 @@ app.get('/business/:id', function (req,res){
 });
 
 app.post('/business', function(req,res){
-	db.run('INSERT INTO business (name, address, type) VALUES (?,?,?)', req.body.name, req.body.address, req.body.type, function(err){
+	db.run('INSERT INTO business (name, address, type, image) VALUES (?,?,?,?)', req.body.name, req.body.address, req.body.type, req.body.image, function(err){
 		if(err){
 			throw err;
 		}else{
@@ -123,7 +123,7 @@ app.post('/business', function(req,res){
 
 app.put('/business/:id', function (req,res){
 		
-		db.run('UPDATE business SET name=?, address=? WHERE id=?', req.body.name, req.body.address, req.params.id, function(err){
+		db.run('UPDATE business SET name=?, address=?, type=?, image=? WHERE id=?', req.body.name, req.body.address, req.body.type, req.body.image, req.params.id, function(err){
 	if(err){
 		throw err
 	}else {
@@ -147,33 +147,51 @@ app.delete('/business/:id', function (req, res){
 
 
 app.get('/business/comments/:id', function (req,res){
+		
 		db.get('SELECT * FROM business WHERE id=?', parseInt(req.params.id), function(err, business){
 		if (err){
 			throw err;
 		}else{
-			db.all('SELECT * FROM comments WHERE business_id= ?', req.params.id, function(err, comments){
+			db.all('SELECT users.username FROM users', function(err, user){
 				if(err){
 					throw err;
 				}else{
-					res.render('show_comments.ejs', {business:business, comments:comments})
+					db.all('SELECT users.username, comments.comment, comments.username, comments.created_at FROM users LEFT JOIN comments ON users.id=comments.users_id WHERE business_id=?  ORDER BY comments.created_at DESC',req.params.id, function(err, comments){
+				if(err){
+					throw err;
+				}else{
+					console.log(comments)
+					res.render('show_comments.ejs', {user:user, business:business, comments:comments})
 				}
 			})
-		
-		
 		}
+});
+}
+});
+});
 
-});
-});
+	//db.all('SELECT users.username, comments.comment FROM users LEFT JOIN comments ON users.users_id=comments.users_id WHERE business_id=? ORDER BY users.created_at'
+
 
 //where comments get written posted....then go back to same page show_comments!!!!
 app.post('/business/comments/:id', function (req,res){
-	db.run('INSERT INTO comments (comment, business_id) VALUES (?,?)', req.body.comment, req.params.id, function(err){
+	db.run('INSERT INTO comments (comment, username, users_id, business_id) VALUES (?,?,?,?)', req.body.comment, req.body.username, req.params.id,req.params.id,function(err){
 		if(err){
 			throw err;
 		}else{
 		 res.redirect('/business/comments/' + req.params.id)
 		}
 	});
+});
+
+app.delete('/business/:id', function (req, res){
+	db.run("DELETE FROM business WHERE id=?", parseInt(req.params.id), function(err, rows){
+	if(err){
+		throw err
+	}else{
+		res.redirect('/list')
+	}
+})
 });
 
 

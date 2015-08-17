@@ -15,7 +15,7 @@
     <title>foodforum</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 
 
@@ -28,18 +28,20 @@
       	<a class="navbar-brand" href="/">Food Forum</a>
     	</div>
     <div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
         <li><a href="/business">Add Your Business</a></li>
         <li><a href="/list">Talk Shop</a></li>
-        <li><a href="/patron/:id">profile</a></li>
       </ul>
     </div>
   </div>
 </nav>
-</div>
 
-<div class="container">
+
+
+
+<div class="submitbusiness">
+
 <form action="/business" method="POST" class="pure-u-1-3 pure-form pure-form-aligned join">
     <fieldset>
         <div class="pure-control-group">
@@ -57,9 +59,16 @@
             <input id="name" type="text" name="type" placeholder="ex. Rest|coffeeshop">
         </div>
 
+        <div class="pure-control-group">
+            <label for="image">Image</label>
+            <input id="image" type="text" name="image" placeholder="enter image URL">
+        </div>
+
         <button type="submit" class="pure-button pure-button-primary">Submit</button>
             </fieldset>
         </form>
+</div>
+
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
