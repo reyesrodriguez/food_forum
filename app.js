@@ -185,7 +185,7 @@ app.post('/business/comments/:id', function (req,res){
 });
 
 app.delete('/business/comments/:id', function (req, res){
-	db.run("DELETE FROM comments WHERE ", function(err){
+	db.run("DELETE FROM comments ", function(err){
 	if(err){
 		throw err
 	}else{
