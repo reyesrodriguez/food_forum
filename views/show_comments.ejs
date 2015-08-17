@@ -41,14 +41,14 @@
   <div class="row">
   
 
-  <div class="col-md-6 business">
+  <div class="col-xs-6 business">
   <h2><img src="<%=business.image%>" class="img-rounded" heigth="225" width="225"></h2>
 	<h2><%=business.name%></h2>
   <h4><%=business.address%></h4>
   <h4><%=business.type%></h4>
   </div>
 
-  <div class="col-md-6 geo">
+  <div class="col-xs-6 geo">
     <h4>Locate this business or other places</h4>
 
     <script type="text/javascript">
@@ -69,7 +69,7 @@
 
 
 
-  <div class="col-md-6 scrollable">
+  <div class="col-xs-6 scrollable">
   <%comments.forEach(function(rows){%>
   <p class="lead"><small><bold><%=rows.comment%></bold></small></p>
   <h4><mark><%=rows.username%></mark></h4>
@@ -77,7 +77,7 @@
   <%})%>
   </div>
 
-    <div class="col-md-6 comment">
+    <div class="col-xs-6 comment">
     <form action="/business/comments/<%=business.id%>" method="POST">
   <input type="text" class="form-control" name="comment" placeholder="Comment Here"><br>
   <input type="text" class="form-control" name="username" placeholder="username"><br>
