@@ -34,21 +34,32 @@
         <li><a href="/patron">Join</a></li>
          <li><a href="/business">Add Your Business</a></li>
          <li><a href="/list">Talk Shop</a></li>
+         <li><a href="/Users">Users</a></li>
       </ul>
     </div>
   </div>
 </nav>
   <div class="row">
+  <script type="text/javascript">
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    </script>
   
 
-  <div class="col-xs-6 business">
-  <h2><img src="<%=business.image%>" class="img-rounded" heigth="225" width="225"></h2>
-	<h2><%=business.name%></h2>
+  <div class="col-md-6 business">
+    <img src="/img/glyphicons-344-thumbs-up.png" heigth="25" width="25"></h2>
+    <button type="button" onClick="onClick()">like</button>
+    <p>Likes <a id="clicks">0</a></p>
+  <h2><img src="<%=business.image%>" class="img-rounded" heigth="225" width="225"> </h2>
+	<h2><%=business.name%> 
   <h4><%=business.address%></h4>
   <h4><%=business.type%></h4>
-  </div>
 
-  <div class="col-xs-6 geo">
+  <h2 class="geo"></h2>
+ 
     <h4>Locate this business or other places</h4>
 
     <script type="text/javascript">
@@ -65,19 +76,20 @@
     <input type="text" class="form-control" name="fieldCity" id="fieldCity" placeholder="Enter City"><br>
    <button type="button" onclick="lookupGeoData14();">Locate</button>
 
-  </div>
-
-
-
-  <div class="col-xs-6 scrollable">
+ </div>
+  <div class="col-md-6 scrollable">
   <%comments.forEach(function(rows){%>
   <p class="lead"><small><bold><%=rows.comment%></bold></small></p>
-  <h4><mark><%=rows.username%></mark></h4>
-  <h5><%=rows.created_at%></h5>
+  <div class="emoji">
+  <h5><img src="/img/glyphicons-246-chat.png" heigth="25" width="25"> <mark><%=rows.username%></mark> <%=rows.created_at%></h5>
+</div>
   <%})%>
+    <form action="/business/comments/<%=business.id%>?_method=DELETE" method="POST">
+    <button>DELETE</button>
+  </form>
   </div>
 
-    <div class="col-xs-6 comment">
+<div class="col-md-6 comment">
     <form action="/business/comments/<%=business.id%>" method="POST">
   <input type="text" class="form-control" name="comment" placeholder="Comment Here"><br>
   <input type="text" class="form-control" name="username" placeholder="username"><br>
@@ -85,6 +97,7 @@
   </form>
   </div>
 	
+
 	</div>
     <script src="geoPosition.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

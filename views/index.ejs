@@ -33,7 +33,8 @@
       <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
         <li><a href="/business">Add Your Business</a></li>
-        <li><a href="/list">Talk Shop</a></li>
+        <li><a href="/list">Places</a></li>
+        <li><a href="/Users">Users</a></li>
       </ul>
     </div>
   </div>
@@ -42,34 +43,28 @@
 
 
 <div class="container">
-<form action="/patron" method="POST" class="pure-u-1-2 pure-form pure-form-aligned join">
-    <fieldset>
-
-        <div class="pure-control-group">
-            <label for="name">Username</label>
-            <input id="name" type="text" name="username" placeholder="enter your username">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="enter your name">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="email">Email Address</label>
-            <input id="email" type="email" name="email" placeholder="Email Address">
-        </div>
-        
-        <div class="pure-control-group">
-            <label for="name">Image</label>
-            <input id="name" type="text" name="image" placeholder="enter image url">
-        </div>
-        <!-- onClick() to the function in js-->
-
-          <button type="submit" class="pure-button pure-button-primary">Submit</button>
-        </div>
-    </fieldset>
+  <div class="submitbusiness">
+<form action="/patron" method="POST" class="col-md-4">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="username" class="form-control" name="name" placeholder="enter name">
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="name" class="form-control" name="address" placeholder="enter address">
+  </div>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="emailaddress" class="form-control" name="email" placeholder="enter email">
+  </div>
+  <div class="form-group">
+    <label for="email">Image</label>
+    <input type="emailaddress" class="form-control" name="image" placeholder="enter image url">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
+</div>
+
   </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

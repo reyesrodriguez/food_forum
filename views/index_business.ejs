@@ -31,7 +31,8 @@
       <ul class="nav navbar-nav centro">
         <li><a href="/patron">Join</a></li>
         <li><a href="/business">Add Your Business</a></li>
-        <li><a href="/list">Talk Shop</a></li>
+        <li><a href="/list">Places</a></li>
+        <li><a href="/Users">Users</a></li>
       </ul>
     </div>
   </div>
@@ -41,32 +42,26 @@
 
 
 <div class="submitbusiness">
-
-<form action="/business" method="POST" class="pure-u-1-3 pure-form pure-form-aligned join">
-    <fieldset>
-        <div class="pure-control-group">
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="enter your name">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="name">Address</label>
-            <input id="name" type="text" name="address" placeholder="enter address">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="name">Type</label>
-            <input id="name" type="text" name="type" placeholder="ex. Rest|coffeeshop">
-        </div>
-
-        <div class="pure-control-group">
-            <label for="image">Image</label>
-            <input id="image" type="text" name="image" placeholder="enter image URL">
-        </div>
-
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
-            </fieldset>
-        </form>
+ 
+<form action="/business" method="POST" class="col-md-4">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="name" class="form-control" name="name" placeholder="enter name">
+  </div>
+  <div class="form-group">
+    <label for="name">Address</label>
+    <input type="name" class="form-control" name="address" placeholder="enter name">
+  </div>
+  <div class="form-group">
+    <label for="name">Type</label>
+    <input type="name" class="form-control" name="type" placeholder="enter name">
+  </div>
+  <div class="form-group">
+    <label for="name">Image</label>
+    <input type="name" class="form-control" name="image" placeholder="enter name">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 </div>
 
 </div>

@@ -53,7 +53,7 @@ app.post('/patron', function (req,res){
 
 app.put('/patron/:id', function (req,res){
 		
-		db.run('UPDATE users SET username=?, name=?, email=?, image=? WHERE users_id=?', req.body.username, req.body.name, req.body.email, req.body.image, req.params.id, function(err){
+		db.run('UPDATE users SET username=?, name=?, email=?, image=? WHERE id=?', req.body.username, req.body.name, req.body.email, req.body.image, req.params.id, function(err){
 	if(err){
 		throw err
 	}else {
@@ -74,15 +74,15 @@ app.delete('/patron/:id', function (req, res){
 });
 
 ////////////////////////////routes for listing each user //////////////////////////////////
-// app.get('/profile/:id', function (req,res){
-// 	db.all('SELECT * FROM users WHERE id=?', function(err, rows) {
-// 		if (err){
-// 			throw err;
-// 		} else{
-// 			res.render('list_user.ejs', {rows: rows})
-// 		}
-// 	});
-// });
+app.get('/users', function (req,res){
+	db.all('SELECT * FROM users', function(err, rows) {
+		if (err){
+			throw err;
+		} else{
+			res.render('list_user.ejs', {rows: rows})
+		}
+	});
+});
 app.get('/list', function (req,res){
 	db.all('SELECT * FROM business', function(err, rows) {
 		if (err){
@@ -147,7 +147,7 @@ app.delete('/business/:id', function (req, res){
 
 
 app.get('/business/comments/:id', function (req,res){
-		
+
 		db.get('SELECT * FROM business WHERE id=?', parseInt(req.params.id), function(err, business){
 		if (err){
 			throw err;
@@ -156,7 +156,7 @@ app.get('/business/comments/:id', function (req,res){
 				if(err){
 					throw err;
 				}else{
-					db.all('SELECT users.username, comments.comment, comments.username, comments.created_at FROM users LEFT JOIN comments ON users.id=comments.users_id WHERE business_id=?  ORDER BY comments.created_at DESC',req.params.id, function(err, comments){
+					db.all('SELECT users.image, comments.comment, comments.username, comments.created_at FROM users LEFT JOIN comments ON users.id=comments.users_id WHERE business_id=? ORDER BY comments.created_at DESC ',req.params.id, function(err, comments){
 				if(err){
 					throw err;
 				}else{
@@ -184,8 +184,8 @@ app.post('/business/comments/:id', function (req,res){
 	});
 });
 
-app.delete('/business/:id', function (req, res){
-	db.run("DELETE FROM business WHERE id=?", parseInt(req.params.id), function(err, rows){
+app.delete('/business/comments/:id', function (req, res){
+	db.run("DELETE FROM comments WHERE ", function(err){
 	if(err){
 		throw err
 	}else{
