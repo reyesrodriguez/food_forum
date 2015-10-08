@@ -112,7 +112,7 @@ app.get('/business/:id', function (req,res){
 });
 
 app.post('/business', function(req,res){
-	db.run('INSERT INTO business (name, address, type, image) VALUES (?,?,?,?)', req.body.name, req.body.address, req.body.type, req.body.image, function(err){
+	db.run('INSERT INTO business (name, address, type, image, votes) VALUES (?,?,?,?,?)', req.body.name, req.body.address, req.body.type, req.body.image, 0, function(err){
 		if(err){
 			throw err;
 		}else{
@@ -120,6 +120,16 @@ app.post('/business', function(req,res){
 		}
 	});
 });
+app.put('/business/votes/:id', function (req,res){
+	db.run('UPDATE business SET votes=votes+1 WHERE business_id=?',req.params.id, function (err){
+		if(err){
+			throw err;
+		}else{
+			console.log(business)
+			res.redirect('/business/' + req.params.id)
+		}
+	})
+})
 
 app.put('/business/:id', function (req,res){
 		
@@ -144,7 +154,9 @@ app.delete('/business/:id', function (req, res){
 });
 
 ////////////////////////////comment routes///////////////////////////////////
-
+// app.get('business/votes/:id', function(req,res){
+// 	db.get('SELECT votes FROM business WHERE ')
+// })
 
 app.get('/business/comments/:id', function (req,res){
 
@@ -156,7 +168,7 @@ app.get('/business/comments/:id', function (req,res){
 				if(err){
 					throw err;
 				}else{
-					db.all('SELECT users.image, comments.comment, comments.username, comments.created_at FROM users LEFT JOIN comments ON users.id=comments.users_id WHERE business_id=? ORDER BY comments.created_at DESC ',req.params.id, function(err, comments){
+					db.all('SELECT comment, username, created_at FROM comments WHERE business_id=?', req.params.id, function(err, comments){
 				if(err){
 					throw err;
 				}else{
@@ -184,8 +196,9 @@ app.post('/business/comments/:id', function (req,res){
 	});
 });
 
+
 app.delete('/business/comments/:id', function (req, res){
-	db.run("DELETE FROM comments ", function(err){
+	db.run("DELETE FROM comments WHERE business_id=? ",req.params.id, function(err){
 	if(err){
 		throw err
 	}else{

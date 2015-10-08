@@ -1,5 +1,4 @@
-body > .container {
-}
+
 
 .image {
 	background-image: url("/img/join_image.jpg");
@@ -10,6 +9,11 @@ body > .container {
 .centro {
 	margin-left: 20%;
 	
+}
+
+.navigacion{
+	height:50px;
+
 }
 .scrollable {
 	border: none;
@@ -54,7 +58,7 @@ margin-top: 20px;
 }
 .submitbusinessone{
 	margin-top: 5%;
-	margin-left: 38%;
+	margin-left: 35%;
 }
 
 .join{
@@ -89,6 +93,7 @@ margin-top: 20px;
 	padding-top: 20px;
 	margin-right:80%;
 }
+
 
 
 
